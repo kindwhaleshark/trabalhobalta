@@ -10,9 +10,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { MasterComponent } from './master/master.component';
 import { AuthenticatedGuard } from './guards/authenticated.guard';
 import { ManagerGuard } from './guards/manager.guard';
-import { ProdutoListComponent } from './produto-list/produto-list.component';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { EditorComponent } from './pages/editor/editor.component';
+import { ProdutoListComponent } from './components/produto-list/produto-list.component';
 
 @NgModule({
   declarations: [

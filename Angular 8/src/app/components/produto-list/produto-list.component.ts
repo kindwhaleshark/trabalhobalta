@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
-import { Produto } from '../models/produto.model';
-import { Resultado } from '../models/resultado.model';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Usuario } from '../models/usuario.model';
-import { UsuarioUtil } from '../utils/usuario.utils';
+import { Produto } from 'src/app/models/produto.model';
+import { DataService } from 'src/app/data.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Resultado } from 'src/app/models/resultado.model';
+import { UsuarioUtil } from 'src/app/utils/usuario.utils';
 
 @Component({
   selector: 'app-produto-list',
