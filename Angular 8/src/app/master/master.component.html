@@ -1,0 +1,24 @@
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-left">
+    <ul class="uk-navbar-nav">
+      <li class="uk-active">
+        <a href="" uk-toggle="target: #menu-lateral">
+          Menu
+        </a>
+      </li>
+      <li><a href="" (click)="sair()">Sair</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="menu-lateral" uk-offcanvas>
+  <div class="uk-offcanvas-bar">
+
+    <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+  </div>
+</div>
+
+<div class="uk-padding">
+  <router-outlet></router-outlet>
+</div>

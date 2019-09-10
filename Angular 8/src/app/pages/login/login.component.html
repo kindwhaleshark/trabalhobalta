@@ -1,0 +1,33 @@
+<div class="uk-flex-center" uk-grid>
+  <div class="uk-width-2-6@m"></div>
+  <div class="uk-card uk-card-default uk-card-body">
+    <h3 class="uk-card-title">Autentique-se</h3>
+    <form [formGroup]="form">
+      <div class="uk-margin">
+        <input type="text" 
+               class="uk-input uk-form-large" 
+               placeholder="Usuário" 
+               formControlName="usuario"
+               [ngClass]="{'uk-form-danger': (!form.controls.usuario.valid && !form.controls.usuario.pristine)}">
+        <span class="uk-text-danger" 
+              *ngIf="form.controls.usuario.invalid && !form.controls.usuario.pristine">
+          Usuário inválido
+        </span>
+      </div>
+      <div class="uk-margin">
+        <input type="password" 
+               class="uk-input uk-form-large" 
+               placeholder="Senha" 
+               formControlName="senha"
+               [ngClass]="{'uk-form-danger': (!form.controls.senha.valid && !form.controls.senha.pristine)}">
+        <span class="uk-text-danger" 
+              *ngIf="form.controls.senha.invalid && !form.controls.senha.pristine">
+          Senha inválida
+        </span>
+      </div>
+    </form>
+    <div class="uk-margin uk-text-right">
+      <button class="uk-button uk-button-default" [disabled]="form.invalid" (click)="entrar()">Entrar</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<app-loading [data]="produtos"></app-loading>
+
+<table class="uk-table uk-table-hover uk-table-divider uk-table-striped" *ngIf="produtos?.length > 0">
+    <thead>
+        <tr>
+            <th class="text-center">Código</th>
+            <th class="text-center">Título</th>
+            <th class="text-center">Preço</th>
+            <th class="text-center">Descrição</th>
+            <th class="text-center">Quantidade</th>
+            <th class="text-center">Categoria</th>
+            <th class="text-center" *ngIf="ehUsuarioValido()"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of produtos"
+            [ngClass]="{ 'selected' : item.codigo == produto?.codigo }">
+            <td>{{ item.codigo }}</td>
+            <td>{{ item.titulo }}</td>
+            <td>{{ item.preco }}</td>
+            <td>{{ item.descricao }}</td>
+            <td>{{ item.quantidade }}</td>
+            <td>{{ item.categoria }}</td>
+            <td *ngIf="ehUsuarioValido()">
+                <button class="uk-button uk-button-default" 
+                        uk-icon="icon: pencil"
+                        *ngIf="item.codigo != produto?.codigo " 
+                        (click)="editar(item)"
+                        title="Editar">
+                </button>
+
+                <button class="uk-button uk-button-danger" 
+                        uk-icon="icon: trash"
+                        *ngIf="item.codigo != produto?.codigo " 
+                        (click)="excluir(item)"
+                        title="Excluir">
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" 
+        class="uk-button uk-button-primary" 
+        (click)="novoProduto()">
+    Novo Produto
+</button>
